@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard</title>
+</head>
+<body>
+    <h1>Welcome to AI Office Assistant</h1>
+
+    <h2>Leave Request</h2>
+    <form method="POST" action="{{ url_for('leave_request') }}">
+        <input type="text" name="user_id" placeholder="User ID" required><br>
+        <input type="text" name="leave_type" placeholder="Leave Type (Casual/Sick)" required><br>
+        <input type="date" name="start_date" required><br>
+        <input type="date" name="end_date" required><br>
+        <button type="submit">Submit Leave Request</button>
+    </form>
+
+    <h2>Certificate Generation</h2>
+    <form method="POST" action="{{ url_for('generate_certificate') }}">
+        <input type="text" name="student_id" placeholder="Student ID" required><br>
+        <input type="text" name="type" placeholder="Certificate Type (Bonafide/NOC)" required><br>
+        <button type="submit">Generate Certificate</button>
+    </form>
+
+    <h2>Academic Queries</h2>
+    <form method="POST" action="{{ url_for('academic_query') }}">
+        <input type="text" name="query" placeholder="Ask about academic calendar or backlog exams" required><br>
+        <button type="submit">Submit Query</button>
+    </form>
+
+    <h2>Chat with AI Bot</h2>
+    <form method="POST" action="{{ url_for('chat_with_bot') }}">
+        <input type="text" name="message" placeholder="Type your question here..." required><br>
+        <button type="submit">Ask Bot</button>
+    </form>
+
+    <br>
+    <a href="{{ url_for('logout') }}">Logout</a>
+</body>
+</html>
